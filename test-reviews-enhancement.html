@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews Section Enhancement Test - Radius Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/image-enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 2rem;
+            background: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .test-header h1 {
+            color: #29354e;
+            margin-bottom: 1rem;
+        }
+        .test-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        .test-section {
+            margin-bottom: 4rem;
+        }
+        .test-section h2 {
+            color: #29354e;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #10b981;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .test-info {
+            background: #e0f2fe;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #0284c7;
+        }
+        .test-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #0284c7;
+        }
+        .test-info p {
+            margin: 0;
+            color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>Reviews Section Enhancement Test</h1>
+            <p>Testing contextual background imagery for customer testimonials</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Enhanced Review Cards with Contextual Background Images</h2>
+            
+            <div class="test-info">
+                <h3>Test Features:</h3>
+                <p>• Contextual background images matching testimonial content<br>
+                • Subtle overlays that don't interfere with text readability<br>
+                • Three-tier fallback system (stock → original → placeholder)<br>
+                • Responsive behavior across all device sizes<br>
+                • Hover effects with smooth image transitions</p>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Water Heater Emergency Service Review -->
+                <div class="review-card enhanced" data-review="water-heater">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-water-heater-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-water-heater-work.jpg" 
+                                 alt="Water heater installation Milwaukee - professional emergency service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/water-heater-icon.png"
+                                 data-category="reviews"
+                                 data-image-name="review-water-heater-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Radius Works saved the day when our water heater failed on a Sunday morning. They responded quickly, provided upfront pricing, and had us back up and running the same day. Truly professional service!"</p>
+                        <div class="review-author">
+                            <strong>Sarah M.</strong>
+                            <span>Whitefish Bay</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Kitchen Review -->
+                <div class="review-card enhanced" data-review="commercial">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-commercial-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-commercial-work.jpg" 
+                                 alt="Commercial kitchen plumbing Milwaukee - restaurant and home service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/commercial-service.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-commercial-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"We've used Radius Works for both our restaurant's commercial kitchen and our home. Their team is knowledgeable, reliable, and always cleans up after themselves. Highly recommend!"</p>
+                        <div class="review-author">
+                            <strong>Mike D.</strong>
+                            <span>Milwaukee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drain Cleaning Review -->
+                <div class="review-card enhanced" data-review="drain-cleaning">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-drain-cleaning-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-drain-cleaning-work.jpg" 
+                                 alt="Drain cleaning Milwaukee - camera inspection and professional service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-drain-cleaning-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Excellent drain cleaning service! They used camera inspection to find the exact problem and fixed it efficiently. No more slow drains in our basement. Great communication throughout the process."</p>
+                        <div class="review-author">
+                            <strong>Jennifer R.</strong>
+                            <span>Mequon</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Fallback System -->
+                <div class="review-card enhanced" data-review="fallback-test">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/non-existent-image.webp" type="image/webp">
+                            <img src="images/non-existent-primary.jpg" 
+                                 alt="Fallback test image - should show graceful degradation"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="reviews"
+                                 data-image-name="fallback-test"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"This card tests the fallback system with non-existent images. It should gracefully degrade to a subtle gradient background while maintaining text readability."</p>
+                        <div class="review-author">
+                            <strong>Test User</strong>
+                            <span>Fallback Test</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Mobile Responsive Test</h2>
+            <div class="test-info">
+                <h3>Responsive Features:</h3>
+                <p>• Reduced image opacity on mobile for better text contrast<br>
+                • Adjusted padding and spacing for smaller screens<br>
+                • Touch-friendly hover effects<br>
+                • Optimized image loading for mobile connections</p>
+            </div>
+            <p style="color: #64748b; text-align: center; font-style: italic;">
+                Resize your browser window or view on mobile to test responsive behavior
+            </p>
+        </div>
+    </div>
+
+    <script src="js/image-enhancements.js"></script>
+    <script>
+        // Test script to demonstrate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🧪 Reviews Enhancement Test Page Loaded');
+            
+            // Add some test interactions
+            const reviewCards = document.querySelectorAll('.review-card.enhanced');
+            reviewCards.forEach((card, index) => {
+                card.addEventListener('mouseenter', () => {
+                    console.log(`🎯 Hovering over review card ${index + 1}`);
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    console.log(`👋 Left review card ${index + 1}`);
+                });
+            });
+            
+            // Test fallback system after page load
+            setTimeout(() => {
+                console.log('🧪 Testing fallback system...');
+                const fallbackTestImg = document.querySelector('[data-image-name="fallback-test"]');
+                if (fallbackTestImg) {
+                    console.log('🔍 Fallback test image found, should trigger error handling');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

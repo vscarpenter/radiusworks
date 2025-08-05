@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section Test - Radius Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/image-enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 20px; background: #f8fafc; }
+        .test-container { max-width: 1200px; margin: 0 auto; }
+        .test-section { margin-bottom: 40px; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .test-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 20px; color: #29354e; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-section">
+            <h2 class="test-title">Hero Section Enhancement Test</h2>
+            
+            <!-- Test Hero Section -->
+            <section class="hero" style="min-height: 60vh; padding: 40px 0;">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Milwaukee's Trusted Plumbing & Drain Cleaning Experts</h1>
+                        <p>Professional residential and commercial plumbing services with transparent pricing, 24/7 emergency response, and guaranteed quality workmanship.</p>
+                        <div class="hero-buttons">
+                            <a href="tel:414-800-9188" class="btn btn-primary">
+                                <i class="fas fa-phone"></i> Call (414) 800-9188
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fas fa-calendar-alt"></i> Book Online
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hero-image-container">
+                            <picture class="hero-picture">
+                                <source srcset="images/optimized/hero/hero-main-plumber.webp" type="image/webp">
+                                <source srcset="images/optimized/hero/hero-main-plumber.png" type="image/png">
+                                <img src="images/stock/hero/hero-main-plumber.png" 
+                                     alt="Professional Milwaukee plumber installing water heater - Expert plumbing services by Radius Works" 
+                                     class="hero-img-enhanced" 
+                                     loading="eager"
+                                     data-fallback-src="images/hero-bg.jpg"
+                                     data-category="hero"
+                                     data-image-name="hero-main-plumber"
+                                     onerror="handleHeroImageError(this)">
+                            </picture>
+                            <div class="hero-image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="test-section">
+            <h3 class="test-title">Test Results</h3>
+            <div id="test-results">
+                <p>Loading test results...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/image-enhancements.js"></script>
+    <script>
+        // Hero-specific image error handling
+        function handleHeroImageError(img) {
+            const fallbackLevel = parseInt(img.dataset.fallbackLevel || '0');
+            
+            switch (fallbackLevel) {
+                case 0:
+                    // Try fallback image
+                    img.dataset.fallbackLevel = '1';
+                    img.src = img.dataset.fallbackSrc || 'images/hero-bg.jpg';
+                    console.log('🔄 Hero image fallback: Using original background');
+                    break;
+                case 1:
+                default:
+                    // Final fallback: Hide image and show gradient background
+                    img.style.display = 'none';
+                    const container = img.closest('.hero-image-container');
+                    if (container) {
+                        container.classList.add('hero-fallback-gradient');
+                    }
+                    console.log('🎨 Hero image final fallback: Using gradient background');
+                    break;
+            }
+        }
+
+        // Test the hero implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultsDiv = document.getElementById('test-results');
+            const results = [];
+            
+            // Test 1: Check if hero image container exists
+            const heroContainer = document.querySelector('.hero-image-container');
+            results.push(`✅ Hero image container: ${heroContainer ? 'Found' : 'Missing'}`);
+            
+            // Test 2: Check if picture element exists
+            const pictureElement = document.querySelector('.hero-picture');
+            results.push(`✅ Picture element: ${pictureElement ? 'Found' : 'Missing'}`);
+            
+            // Test 3: Check if WebP source exists
+            const webpSource = document.querySelector('source[type="image/webp"]');
+            results.push(`✅ WebP source: ${webpSource ? 'Found' : 'Missing'}`);
+            
+            // Test 4: Check if image has proper alt text
+            const heroImg = document.querySelector('.hero-img-enhanced');
+            const hasGoodAlt = heroImg && heroImg.alt.includes('Milwaukee') && heroImg.alt.includes('plumber');
+            results.push(`✅ SEO-optimized alt text: ${hasGoodAlt ? 'Good' : 'Needs improvement'}`);
+            
+            // Test 5: Check if image has eager loading
+            const hasEagerLoading = heroImg && heroImg.loading === 'eager';
+            results.push(`✅ Eager loading: ${hasEagerLoading ? 'Enabled' : 'Disabled'}`);
+            
+            // Test 6: Check if overlay exists
+            const overlay = document.querySelector('.hero-image-overlay');
+            results.push(`✅ Image overlay: ${overlay ? 'Found' : 'Missing'}`);
+            
+            // Test 7: Check if error handling is set up
+            const hasErrorHandler = heroImg && heroImg.getAttribute('onerror');
+            results.push(`✅ Error handling: ${hasErrorHandler ? 'Configured' : 'Missing'}`);
+            
+            resultsDiv.innerHTML = results.map(result => `<p>${result}</p>`).join('');
+            
+            // Test image loading
+            if (heroImg) {
+                heroImg.addEventListener('load', function() {
+                    console.log('✅ Hero image loaded successfully');
+                    const loadResult = document.createElement('p');
+                    loadResult.textContent = '✅ Image loading: Success';
+                    loadResult.style.color = 'green';
+                    resultsDiv.appendChild(loadResult);
+                });
+                
+                heroImg.addEventListener('error', function() {
+                    console.log('⚠️ Hero image failed to load, fallback triggered');
+                    const errorResult = document.createElement('p');
+                    errorResult.textContent = '⚠️ Image loading: Failed (fallback triggered)';
+                    errorResult.style.color = 'orange';
+                    resultsDiv.appendChild(errorResult);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

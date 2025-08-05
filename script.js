@@ -223,6 +223,116 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Enhanced service image error handling
+function handleServiceImageError(img) {
+    const fallbackSrc = img.dataset.fallbackSrc;
+    const fallbackLevel = parseInt(img.dataset.fallbackLevel || '0');
+    
+    console.warn(`⚠️ Service image failed to load (Level ${fallbackLevel}): ${img.src}`);
+    
+    switch (fallbackLevel) {
+        case 0:
+            // First tier failed: Try secondary fallback
+            if (fallbackSrc && fallbackSrc !== img.src) {
+                img.dataset.fallbackLevel = '1';
+                img.src = fallbackSrc;
+                img.classList.add('fallback-secondary');
+                console.log(`🔄 Attempting service image fallback: ${fallbackSrc}`);
+            } else {
+                handleServiceImageFinalFallback(img);
+            }
+            break;
+        case 1:
+        default:
+            // All fallbacks failed: Use CSS placeholder
+            handleServiceImageFinalFallback(img);
+            break;
+    }
+}
+
+function handleServiceImageFinalFallback(img) {
+    img.dataset.fallbackLevel = '2';
+    img.style.display = 'none';
+    
+    const serviceCard = img.closest('.service-card-enhanced');
+    const serviceBackground = img.closest('.service-background');
+    
+    if (serviceBackground && serviceCard) {
+        // Create a gradient background based on service type
+        const serviceType = serviceCard.dataset.service;
+        const gradientColors = getServiceGradientColors(serviceType);
+        
+        serviceBackground.style.background = `linear-gradient(135deg, ${gradientColors.start} 0%, ${gradientColors.end} 100%)`;
+        serviceBackground.classList.add('service-fallback-gradient');
+        
+        // Add service icon as background
+        const serviceIcon = serviceCard.querySelector('.service-icon i');
+        if (serviceIcon) {
+            const iconClass = serviceIcon.className;
+            serviceBackground.innerHTML = `
+                <div class="service-fallback-icon">
+                    <i class="${iconClass}"></i>
+                </div>
+                <div class="service-overlay"></div>
+            `;
+        }
+        
+        console.log(`🎨 Using gradient fallback for service: ${serviceType}`);
+    }
+}
+
+function getServiceGradientColors(serviceType) {
+    const gradients = {
+        'residential': { start: 'rgba(59, 130, 246, 0.8)', end: 'rgba(37, 99, 235, 0.9)' },
+        'commercial': { start: 'rgba(16, 185, 129, 0.8)', end: 'rgba(5, 150, 105, 0.9)' },
+        'water-heater': { start: 'rgba(245, 158, 11, 0.8)', end: 'rgba(217, 119, 6, 0.9)' },
+        'drain-cleaning': { start: 'rgba(139, 92, 246, 0.8)', end: 'rgba(124, 58, 237, 0.9)' },
+        'water-filtration': { start: 'rgba(6, 182, 212, 0.8)', end: 'rgba(8, 145, 178, 0.9)' },
+        'emergency': { start: 'rgba(220, 38, 38, 0.9)', end: 'rgba(185, 28, 28, 0.95)' }
+    };
+    
+    return gradients[serviceType] || { start: 'rgba(71, 85, 105, 0.8)', end: 'rgba(51, 65, 85, 0.9)' };
+}
+
+// Initialize service card lazy loading
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceImages = document.querySelectorAll('.service-background img[loading="lazy"]');
+    
+    // Create intersection observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.classList.add('loading');
+                
+                // Load the image
+                const tempImg = new Image();
+                tempImg.onload = () => {
+                    img.classList.remove('loading');
+                    img.classList.add('loaded');
+                    console.log(`✅ Service image loaded: ${img.dataset.imageName}`);
+                };
+                
+                tempImg.onerror = () => {
+                    handleServiceImageError(img);
+                };
+                
+                tempImg.src = img.src;
+                imageObserver.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+    
+    serviceImages.forEach(img => {
+        imageObserver.observe(img);
+    });
+    
+    console.log(`🔍 Observing ${serviceImages.length} service images for lazy loading`);
+});
+
 // Add loading state to buttons
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.btn');

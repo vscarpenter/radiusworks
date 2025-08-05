@@ -21,6 +21,7 @@
     <meta name="geo.position" content="43.0389;-87.9065">
     <meta name="ICBM" content="43.0389, -87.9065">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/image-enhancements.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="canonical" href="https://www.radiusworks.net/">
@@ -52,7 +53,16 @@
         "name": "Milwaukee, Mequon, Bayside, Whitefish Bay, Glendale, Shorewood, River Hills, Fox Point"
       },
       "priceRange": "$$",
-      "image": "https://www.radiusworks.net/images/stock/hero/hero-main-plumber.png",
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://www.radiusworks.net/images/stock/hero/hero-main-plumber.png",
+          "caption": "Professional Milwaukee plumber installing water heater - Radius Works expert plumbing services",
+          "width": 1920,
+          "height": 1080,
+          "contentUrl": "https://www.radiusworks.net/images/optimized/hero/hero-main-plumber.webp"
+        }
+      ],
       "sameAs": [
         "https://www.radiusworks.net"
       ],
@@ -168,9 +178,21 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- UPDATED: Use new stock hero images with fallback system -->
-                <img src="images/stock/hero/hero-main-plumber.png" alt="Professional plumbing service" class="hero-img" 
-                     onerror="this.src='images/hero-bg.jpg'">
+                <div class="hero-image-container">
+                    <picture class="hero-picture">
+                        <source srcset="images/optimized/hero/hero-main-plumber.webp" type="image/webp">
+                        <source srcset="images/optimized/hero/hero-main-plumber.png" type="image/png">
+                        <img src="images/stock/hero/hero-main-plumber.png" 
+                             alt="Professional Milwaukee plumber installing water heater - Expert plumbing services by Radius Works" 
+                             class="hero-img-enhanced" 
+                             loading="eager"
+                             data-fallback-src="images/hero-bg.jpg"
+                             data-category="hero"
+                             data-image-name="hero-main-plumber"
+                             onerror="handleHeroImageError(this)">
+                    </picture>
+                    <div class="hero-image-overlay"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -184,118 +206,178 @@
             </div>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-bathroom-plumbing.jpg" alt="Residential plumbing service"
-                             onerror="this.src='images/residential-service.jpg'">
+                <div class="service-card service-card-enhanced" data-service="residential">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-bathroom-plumbing.webp" type="image/webp">
+                            <img src="images/stock/services/service-bathroom-plumbing.jpg" 
+                                 alt="Professional bathroom plumbing installation Milwaukee - toilet and faucet repair services"
+                                 loading="lazy"
+                                 data-fallback-src="images/residential-service.jpg"
+                                 data-category="services"
+                                 data-image-name="service-bathroom-plumbing"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Residential Plumbing</h3>
+                        <p>Complete home plumbing services including repairs, installations, and maintenance for bathrooms, kitchens, and utility rooms.</p>
+                        <ul>
+                            <li>Toilet & Faucet Repairs</li>
+                            <li>Pipe Installation & Repair</li>
+                            <li>Bathroom Remodeling</li>
+                            <li>Kitchen Plumbing</li>
+                        </ul>
                     </div>
-                    <h3>Residential Plumbing</h3>
-                    <p>Complete home plumbing services including repairs, installations, and maintenance for bathrooms, kitchens, and utility rooms.</p>
-                    <ul>
-                        <li>Toilet & Faucet Repairs</li>
-                        <li>Pipe Installation & Repair</li>
-                        <li>Bathroom Remodeling</li>
-                        <li>Kitchen Plumbing</li>
-                    </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-commercial-kitchen.jpg" alt="Commercial plumbing service"
-                             onerror="this.src='images/commercial-service.jpg'">
+                <div class="service-card service-card-enhanced" data-service="commercial">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-commercial-kitchen.webp" type="image/webp">
+                            <img src="images/stock/services/service-commercial-kitchen.jpg" 
+                                 alt="Commercial kitchen plumbing Milwaukee - restaurant plumbing services Radius Works"
+                                 loading="lazy"
+                                 data-fallback-src="images/commercial-service.jpg"
+                                 data-category="services"
+                                 data-image-name="service-commercial-kitchen"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Commercial Plumbing</h3>
+                        <p>Specialized commercial solutions tailored to meet unique business needs with minimal disruption to your operations.</p>
+                        <ul>
+                            <li>Restaurant Kitchen Services</li>
+                            <li>Office Building Maintenance</li>
+                            <li>Retail Space Plumbing</li>
+                            <li>Industrial Solutions</li>
+                        </ul>
                     </div>
-                    <h3>Commercial Plumbing</h3>
-                    <p>Specialized commercial solutions tailored to meet unique business needs with minimal disruption to your operations.</p>
-                    <ul>
-                        <li>Restaurant Kitchen Services</li>
-                        <li>Office Building Maintenance</li>
-                        <li>Retail Space Plumbing</li>
-                        <li>Industrial Solutions</li>
-                    </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-water-heater-install.jpg" alt="Water heater services" class="service-icon-img"
-                             onerror="this.src='images/water-heater-icon.png'">
+                <div class="service-card service-card-enhanced" data-service="water-heater">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-water-heater-install.webp" type="image/webp">
+                            <img src="images/stock/services/service-water-heater-install.jpg" 
+                                 alt="Water heater installation Milwaukee - tankless and traditional water heater services"
+                                 loading="lazy"
+                                 data-fallback-src="images/water-heater-icon.png"
+                                 data-category="services"
+                                 data-image-name="service-water-heater-install"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-tint"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Water Heater Services</h3>
+                        <p>Expert water heater installation, repair, and replacement including traditional and tankless systems.</p>
+                        <ul>
+                            <li>Tankless Water Heaters</li>
+                            <li>Traditional Tank Replacement</li>
+                            <li>Water Heater Repair</li>
+                            <li>Energy Efficient Solutions</li>
+                        </ul>
                     </div>
-                    <h3>Water Heater Services</h3>
-                    <p>Expert water heater installation, repair, and replacement including traditional and tankless systems.</p>
-                    <ul>
-                        <li>Tankless Water Heaters</li>
-                        <li>Traditional Tank Replacement</li>
-                        <li>Water Heater Repair</li>
-                        <li>Energy Efficient Solutions</li>
-                    </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-drain-cleaning.jpg" alt="Drain cleaning services" class="service-icon-img"
-                             onerror="this.src='images/hero-bg.jpg'">
+                <div class="service-card service-card-enhanced" data-service="drain-cleaning">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-drain-cleaning.webp" type="image/webp">
+                            <img src="images/stock/services/service-drain-cleaning.jpg" 
+                                 alt="Professional drain cleaning Milwaukee - hydro jetting and camera inspection services"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="services"
+                                 data-image-name="service-drain-cleaning"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-shower"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-shower"></i>
+                        </div>
+                        <h3>Drain Cleaning</h3>
+                        <p>Professional drain cleaning and clog removal using advanced equipment and eco-friendly methods.</p>
+                        <ul>
+                            <li>Emergency Drain Service</li>
+                            <li>Hydro Jetting</li>
+                            <li>Camera Inspection</li>
+                            <li>Preventive Maintenance</li>
+                        </ul>
                     </div>
-                    <h3>Drain Cleaning</h3>
-                    <p>Professional drain cleaning and clog removal using advanced equipment and eco-friendly methods.</p>
-                    <ul>
-                        <li>Emergency Drain Service</li>
-                        <li>Hydro Jetting</li>
-                        <li>Camera Inspection</li>
-                        <li>Preventive Maintenance</li>
-                    </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-water-filtration.jpg" alt="Water filtration services" class="service-icon-img"
-                             onerror="this.src='images/water-filter-icon.png'">
+                <div class="service-card service-card-enhanced" data-service="water-filtration">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-water-filtration.webp" type="image/webp">
+                            <img src="images/stock/services/service-water-filtration.jpg" 
+                                 alt="Water filtration system installation Milwaukee - whole house and under-sink filters"
+                                 loading="lazy"
+                                 data-fallback-src="images/water-filter-icon.png"
+                                 data-category="services"
+                                 data-image-name="service-water-filtration"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-filter"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Water Filtration</h3>
+                        <p>Improve your water quality with professional filtration system installation and maintenance.</p>
+                        <ul>
+                            <li>Whole House Filters</li>
+                            <li>Under-Sink Systems</li>
+                            <li>Water Softeners</li>
+                            <li>Filter Replacement</li>
+                        </ul>
                     </div>
-                    <h3>Water Filtration</h3>
-                    <p>Improve your water quality with professional filtration system installation and maintenance.</p>
-                    <ul>
-                        <li>Whole House Filters</li>
-                        <li>Under-Sink Systems</li>
-                        <li>Water Softeners</li>
-                        <li>Filter Replacement</li>
-                    </ul>
                 </div>
 
-                <div class="service-card emergency">
-                    <div class="service-image">
-                        <!-- UPDATED: Use new stock image when available -->
-                        <img src="images/stock/services/service-emergency-repair.jpg" alt="Emergency plumbing services"
-                             onerror="this.src='images/hero-bg.jpg'">
+                <div class="service-card service-card-enhanced emergency" data-service="emergency">
+                    <div class="service-background">
+                        <picture>
+                            <source srcset="images/optimized/services/service-emergency-repair.webp" type="image/webp">
+                            <img src="images/stock/services/service-emergency-repair.jpg" 
+                                 alt="24/7 emergency plumbing Milwaukee - burst pipe repair and emergency services"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="services"
+                                 data-image-name="service-emergency-repair"
+                                 onerror="handleServiceImageError(this)">
+                        </picture>
+                        <div class="service-overlay"></div>
                     </div>
-                    <div class="service-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>24/7 Emergency Service</h3>
+                        <p>Plumbing emergencies don't wait for business hours. We're available around the clock for urgent repairs.</p>
+                        <ul>
+                            <li>Burst Pipe Repair</li>
+                            <li>Severe Clogs</li>
+                            <li>Water Heater Failures</li>
+                            <li>Flooding Prevention</li>
+                        </ul>
                     </div>
-                    <h3>24/7 Emergency Service</h3>
-                    <p>Plumbing emergencies don't wait for business hours. We're available around the clock for urgent repairs.</p>
-                    <ul>
-                        <li>Burst Pipe Repair</li>
-                        <li>Severe Clogs</li>
-                        <li>Water Heater Failures</li>
-                        <li>Flooding Prevention</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -333,9 +415,61 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <!-- UPDATED: Use new stock image when available -->
-                    <img src="images/stock/about/about-team-group.jpg" alt="Radius Works - Professional plumbing team" class="about-img"
-                         onerror="this.src='images/radius-logo2.png'">
+                    <div class="about-team-gallery">
+                        <div class="team-primary">
+                            <picture>
+                                <source srcset="images/optimized/about/about-team-group.webp" type="image/webp">
+                                <img src="images/stock/about/about-team-group.jpg"
+                                     alt="Radius Works professional plumbing team Milwaukee Wisconsin - experienced licensed plumbers"
+                                     loading="lazy"
+                                     class="team-primary-img"
+                                     data-fallback-src="images/radius-logo2.png"
+                                     data-category="about"
+                                     data-image-name="about-team-group"
+                                     onerror="handleAboutImageError(this)">
+                            </picture>
+                            <div class="team-overlay">
+                                <div class="team-info">
+                                    <h4>Our Professional Team</h4>
+                                    <p>Licensed & experienced plumbers serving Milwaukee</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-secondary">
+                            <div class="team-member">
+                                <picture>
+                                    <source srcset="images/optimized/about/about-plumber-portrait.webp" type="image/webp">
+                                    <img src="images/stock/about/about-plumber-portrait.jpg"
+                                         alt="Licensed plumber Milwaukee - professional service technician with years of experience"
+                                         loading="lazy"
+                                         class="team-member-img"
+                                         data-fallback-src="images/radius-logo2.png"
+                                         data-category="about"
+                                         data-image-name="about-plumber-portrait"
+                                         onerror="handleAboutImageError(this)">
+                                </picture>
+                                <div class="member-overlay">
+                                    <span>Lead Technician</span>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <picture>
+                                    <source srcset="images/optimized/about/about-team-work.webp" type="image/webp">
+                                    <img src="images/stock/about/about-team-work.jpg"
+                                         alt="Radius Works team installing plumbing system Milwaukee - professional installation services"
+                                         loading="lazy"
+                                         class="team-member-img"
+                                         data-fallback-src="images/radius-logo2.png"
+                                         data-category="about"
+                                         data-image-name="about-team-work"
+                                         onerror="handleAboutImageError(this)">
+                                </picture>
+                                <div class="member-overlay">
+                                    <span>Expert Installation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -350,93 +484,183 @@
             </div>
             
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="review-card enhanced" data-review="water-heater">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-water-heater-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-water-heater-work.jpg" 
+                                 alt="Water heater installation Milwaukee - professional emergency service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/water-heater-icon.png"
+                                 data-category="reviews"
+                                 data-image-name="review-water-heater-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
                     </div>
-                    <p class="review-text">"Radius Works saved the day when our water heater failed on a Sunday morning. They responded quickly, provided upfront pricing, and had us back up and running the same day. Truly professional service!"</p>
-                    <div class="review-author">
-                        <strong>Sarah M.</strong>
-                        <span>Whitefish Bay</span>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"We've used Radius Works for both our restaurant's commercial kitchen and our home. Their team is knowledgeable, reliable, and always cleans up after themselves. Highly recommend!"</p>
-                    <div class="review-author">
-                        <strong>Mike D.</strong>
-                        <span>Milwaukee</span>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="review-text">"Excellent drain cleaning service! They used camera inspection to find the exact problem and fixed it efficiently. No more slow drains in our basement. Great communication throughout the process."</p>
-                    <div class="review-author">
-                        <strong>Jennifer R.</strong>
-                        <span>Mequon</span>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Radius Works saved the day when our water heater failed on a Sunday morning. They responded quickly, provided upfront pricing, and had us back up and running the same day. Truly professional service!"</p>
+                        <div class="review-author">
+                            <strong>Sarah M.</strong>
+                            <span>Whitefish Bay</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="review-card enhanced" data-review="commercial">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-commercial-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-commercial-work.jpg" 
+                                 alt="Commercial kitchen plumbing Milwaukee - restaurant and home service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/commercial-service.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-commercial-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
                     </div>
-                    <p class="review-text">"Called Radius Works for a bathroom remodel plumbing project. They were professional, on time, and the work quality exceeded our expectations. Fair pricing with no surprises."</p>
-                    <div class="review-author">
-                        <strong>Robert K.</strong>
-                        <span>Bayside</span>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"We've used Radius Works for both our restaurant's commercial kitchen and our home. Their team is knowledgeable, reliable, and always cleans up after themselves. Highly recommend!"</p>
+                        <div class="review-author">
+                            <strong>Mike D.</strong>
+                            <span>Milwaukee</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="review-card enhanced" data-review="drain-cleaning">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-drain-cleaning-work.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-drain-cleaning-work.jpg" 
+                                 alt="Drain cleaning Milwaukee - camera inspection and professional service example"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-drain-cleaning-work"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
                     </div>
-                    <p class="review-text">"Outstanding emergency service! When our main line backed up, Radius Works was here within an hour and resolved the issue quickly. They explained everything clearly and were very respectful of our home."</p>
-                    <div class="review-author">
-                        <strong>Lisa T.</strong>
-                        <span>Shorewood</span>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Excellent drain cleaning service! They used camera inspection to find the exact problem and fixed it efficiently. No more slow drains in our basement. Great communication throughout the process."</p>
+                        <div class="review-author">
+                            <strong>Jennifer R.</strong>
+                            <span>Mequon</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="review-card enhanced" data-review="bathroom-remodel">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-bathroom-remodel.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-bathroom-remodel.jpg" 
+                                 alt="Bathroom remodel plumbing Milwaukee - professional installation example"
+                                 loading="lazy"
+                                 data-fallback-src="images/residential-service.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-bathroom-remodel"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
                     </div>
-                    <p class="review-text">"We had Radius Works install a whole-house water filtration system. They took time to explain our options and the installation was clean and professional. Water tastes great now!"</p>
-                    <div class="review-author">
-                        <strong>David L.</strong>
-                        <span>Glendale</span>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Called Radius Works for a bathroom remodel plumbing project. They were professional, on time, and the work quality exceeded our expectations. Fair pricing with no surprises."</p>
+                        <div class="review-author">
+                            <strong>Robert K.</strong>
+                            <span>Bayside</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card enhanced" data-review="emergency">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-emergency-service.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-emergency-service.jpg" 
+                                 alt="Emergency plumbing Milwaukee - main line backup repair example"
+                                 loading="lazy"
+                                 data-fallback-src="images/hero-bg.jpg"
+                                 data-category="reviews"
+                                 data-image-name="review-emergency-service"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"Outstanding emergency service! When our main line backed up, Radius Works was here within an hour and resolved the issue quickly. They explained everything clearly and were very respectful of our home."</p>
+                        <div class="review-author">
+                            <strong>Lisa T.</strong>
+                            <span>Shorewood</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card enhanced" data-review="professional-service">
+                    <div class="review-background">
+                        <picture>
+                            <source srcset="images/optimized/reviews/review-professional-service.webp" type="image/webp">
+                            <img src="images/stock/reviews/review-professional-service.jpg" 
+                                 alt="Professional plumbing service Milwaukee - quality workmanship and customer satisfaction example"
+                                 loading="lazy"
+                                 data-fallback-src="images/water-filter-icon.png"
+                                 data-category="reviews"
+                                 data-image-name="review-professional-service"
+                                 onerror="handleReviewImageError(this)">
+                        </picture>
+                        <div class="review-overlay"></div>
+                    </div>
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">"We had Radius Works install a whole-house water filtration system. They took time to explain our options and the installation was clean and professional. Water tastes great now!"</p>
+                        <div class="review-author">
+                            <strong>David L.</strong>
+                            <span>Glendale</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -587,6 +811,32 @@
         </div>
     </footer>
 
+    <script src="js/image-enhancements.js"></script>
+    <script>
+        // Hero-specific image error handling
+        function handleHeroImageError(img) {
+            const fallbackLevel = parseInt(img.dataset.fallbackLevel || '0');
+            
+            switch (fallbackLevel) {
+                case 0:
+                    // Try fallback image
+                    img.dataset.fallbackLevel = '1';
+                    img.src = img.dataset.fallbackSrc || 'images/hero-bg.jpg';
+                    console.log('🔄 Hero image fallback: Using original background');
+                    break;
+                case 1:
+                default:
+                    // Final fallback: Hide image and show gradient background
+                    img.style.display = 'none';
+                    const container = img.closest('.hero-image-container');
+                    if (container) {
+                        container.classList.add('hero-fallback-gradient');
+                    }
+                    console.log('🎨 Hero image final fallback: Using gradient background');
+                    break;
+            }
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

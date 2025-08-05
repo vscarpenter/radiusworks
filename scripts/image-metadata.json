@@ -1,0 +1,209 @@
+{
+  "hero": {
+    "hero-main-plumber": {
+      "src": "images/stock/hero/hero-main-plumber.png",
+      "webp": "images/optimized/hero/hero-main-plumber.webp",
+      "optimized": "images/optimized/hero/hero-main-plumber.png",
+      "alt": "Professional Milwaukee plumber installing water heater - Radius Works expert plumbing services",
+      "title": "Expert Plumbing Services Milwaukee - Professional Water Heater Installation",
+      "keywords": ["milwaukee plumber", "professional plumbing", "water heater installation", "radius works"],
+      "dimensions": { "width": 1920, "height": 1080 },
+      "category": "hero",
+      "priority": "high"
+    },
+    "hero-team-photo": {
+      "src": "images/stock/hero/hero-team-photo.png",
+      "webp": "images/optimized/hero/hero-team-photo.webp",
+      "optimized": "images/optimized/hero/hero-team-photo.png",
+      "alt": "Radius Works professional plumbing team Milwaukee Wisconsin - licensed plumbers",
+      "title": "Professional Plumbing Team Milwaukee - Radius Works Licensed Technicians",
+      "keywords": ["plumbing team milwaukee", "licensed plumbers", "professional technicians"],
+      "dimensions": { "width": 1920, "height": 1080 },
+      "category": "hero",
+      "priority": "medium"
+    }
+  },
+  "services": {
+    "service-bathroom-plumbing": {
+      "src": "images/stock/services/service-bathroom-plumbing.jpg",
+      "webp": "images/optimized/services/service-bathroom-plumbing.webp",
+      "optimized": "images/optimized/services/service-bathroom-plumbing.jpg",
+      "alt": "Professional bathroom plumbing installation Milwaukee - toilet and faucet repair services",
+      "title": "Bathroom Plumbing Services Milwaukee - Professional Installation and Repair",
+      "keywords": ["bathroom plumbing milwaukee", "toilet repair", "faucet installation", "bathroom remodeling"],
+      "serviceType": "residential",
+      "category": "services",
+      "priority": "high"
+    },
+    "service-commercial-kitchen": {
+      "src": "images/stock/services/service-commercial-kitchen.jpg",
+      "webp": "images/optimized/services/service-commercial-kitchen.webp",
+      "optimized": "images/optimized/services/service-commercial-kitchen.jpg",
+      "alt": "Commercial kitchen plumbing Milwaukee - restaurant plumbing services Radius Works",
+      "title": "Commercial Kitchen Plumbing Milwaukee - Restaurant Plumbing Specialists",
+      "keywords": ["commercial plumbing milwaukee", "restaurant kitchen plumbing", "commercial services"],
+      "serviceType": "commercial",
+      "category": "services",
+      "priority": "high"
+    },
+    "service-water-heater-install": {
+      "src": "images/stock/services/service-water-heater-install.jpg",
+      "webp": "images/optimized/services/service-water-heater-install.webp",
+      "optimized": "images/optimized/services/service-water-heater-install.jpg",
+      "alt": "Water heater installation Milwaukee - tankless and traditional water heater services",
+      "title": "Water Heater Installation Milwaukee - Tankless and Traditional Systems",
+      "keywords": ["water heater installation milwaukee", "tankless water heater", "water heater repair"],
+      "serviceType": "water-heater",
+      "category": "services",
+      "priority": "high"
+    },
+    "service-drain-cleaning": {
+      "src": "images/stock/services/service-drain-cleaning.jpg",
+      "webp": "images/optimized/services/service-drain-cleaning.webp",
+      "optimized": "images/optimized/services/service-drain-cleaning.jpg",
+      "alt": "Professional drain cleaning Milwaukee - hydro jetting and camera inspection services",
+      "title": "Drain Cleaning Services Milwaukee - Hydro Jetting and Camera Inspection",
+      "keywords": ["drain cleaning milwaukee", "hydro jetting", "camera inspection", "clog removal"],
+      "serviceType": "drain-cleaning",
+      "category": "services",
+      "priority": "high"
+    },
+    "service-water-filtration": {
+      "src": "images/stock/services/service-water-filtration.jpg",
+      "webp": "images/optimized/services/service-water-filtration.webp",
+      "optimized": "images/optimized/services/service-water-filtration.jpg",
+      "alt": "Water filtration system installation Milwaukee - whole house and under-sink filters",
+      "title": "Water Filtration Systems Milwaukee - Whole House and Under-Sink Installation",
+      "keywords": ["water filtration milwaukee", "whole house filters", "under sink systems", "water softeners"],
+      "serviceType": "water-filtration",
+      "category": "services",
+      "priority": "high"
+    },
+    "service-emergency-repair": {
+      "src": "images/stock/services/service-emergency-repair.jpg",
+      "webp": "images/optimized/services/service-emergency-repair.webp",
+      "optimized": "images/optimized/services/service-emergency-repair.jpg",
+      "alt": "24/7 emergency plumbing Milwaukee - burst pipe repair and emergency services",
+      "title": "Emergency Plumbing Services Milwaukee - 24/7 Burst Pipe Repair",
+      "keywords": ["emergency plumber milwaukee", "24/7 plumbing", "burst pipe repair", "emergency services"],
+      "serviceType": "emergency",
+      "category": "services",
+      "priority": "critical"
+    }
+  },
+  "about": {
+    "about-team-group": {
+      "src": "images/stock/about/about-team-group.jpg",
+      "webp": "images/optimized/about/about-team-group.webp",
+      "optimized": "images/optimized/about/about-team-group.jpg",
+      "alt": "Radius Works professional plumbing team Milwaukee Wisconsin - experienced licensed plumbers",
+      "title": "Meet the Radius Works Team - Professional Milwaukee Plumbers",
+      "keywords": ["plumbing team milwaukee", "licensed plumbers wisconsin", "professional technicians"],
+      "category": "about",
+      "priority": "medium"
+    },
+    "about-plumber-portrait": {
+      "src": "images/stock/about/about-plumber-portrait.jpg",
+      "webp": "images/optimized/about/about-plumber-portrait.webp",
+      "optimized": "images/optimized/about/about-plumber-portrait.jpg",
+      "alt": "Licensed plumber Milwaukee - professional service technician with years of experience",
+      "title": "Professional Plumber Milwaukee - Licensed Service Technician",
+      "keywords": ["licensed plumber milwaukee", "professional technician", "experienced plumber"],
+      "category": "about",
+      "priority": "medium"
+    },
+    "about-team-work": {
+      "src": "images/stock/about/about-team-work.jpg",
+      "webp": "images/optimized/about/about-team-work.webp",
+      "optimized": "images/optimized/about/about-team-work.jpg",
+      "alt": "Radius Works team installing plumbing system Milwaukee - professional installation services",
+      "title": "Professional Plumbing Installation - Radius Works Team at Work",
+      "keywords": ["plumbing installation milwaukee", "professional installation", "team at work"],
+      "category": "about",
+      "priority": "medium"
+    }
+  },
+  "reviews": {
+    "review-water-heater-work": {
+      "src": "images/stock/reviews/review-water-heater-work.jpg",
+      "webp": "images/optimized/reviews/review-water-heater-work.webp",
+      "optimized": "images/optimized/reviews/review-water-heater-work.jpg",
+      "alt": "Water heater installation Milwaukee - professional emergency service example",
+      "title": "Emergency Water Heater Service - Milwaukee Customer Testimonial",
+      "keywords": ["water heater emergency", "sunday service", "professional installation"],
+      "testimonialMatch": "water heater failed on a Sunday morning",
+      "category": "reviews",
+      "priority": "medium"
+    },
+    "review-commercial-work": {
+      "src": "images/stock/reviews/review-commercial-work.jpg",
+      "webp": "images/optimized/reviews/review-commercial-work.webp",
+      "optimized": "images/optimized/reviews/review-commercial-work.jpg",
+      "alt": "Commercial kitchen plumbing Milwaukee - restaurant and home service example",
+      "title": "Commercial and Residential Plumbing - Milwaukee Customer Satisfaction",
+      "keywords": ["commercial kitchen", "restaurant plumbing", "home service"],
+      "testimonialMatch": "restaurant's commercial kitchen and our home",
+      "category": "reviews",
+      "priority": "medium"
+    },
+    "review-drain-cleaning-work": {
+      "src": "images/stock/reviews/review-drain-cleaning-work.jpg",
+      "webp": "images/optimized/reviews/review-drain-cleaning-work.webp",
+      "optimized": "images/optimized/reviews/review-drain-cleaning-work.jpg",
+      "alt": "Drain cleaning Milwaukee - camera inspection and professional service example",
+      "title": "Professional Drain Cleaning - Milwaukee Camera Inspection Service",
+      "keywords": ["drain cleaning", "camera inspection", "basement drains"],
+      "testimonialMatch": "camera inspection to find the exact problem",
+      "category": "reviews",
+      "priority": "medium"
+    },
+    "review-bathroom-remodel": {
+      "src": "images/stock/reviews/review-bathroom-remodel.jpg",
+      "webp": "images/optimized/reviews/review-bathroom-remodel.webp",
+      "optimized": "images/optimized/reviews/review-bathroom-remodel.jpg",
+      "alt": "Bathroom remodel plumbing Milwaukee - professional installation example",
+      "title": "Bathroom Remodel Plumbing - Milwaukee Professional Installation",
+      "keywords": ["bathroom remodel", "plumbing project", "professional installation"],
+      "testimonialMatch": "bathroom remodel plumbing project",
+      "category": "reviews",
+      "priority": "medium"
+    },
+    "review-emergency-service": {
+      "src": "images/stock/reviews/review-emergency-service.jpg",
+      "webp": "images/optimized/reviews/review-emergency-service.webp",
+      "optimized": "images/optimized/reviews/review-emergency-service.jpg",
+      "alt": "Emergency plumbing Milwaukee - main line backup repair example",
+      "title": "Emergency Plumbing Service - Milwaukee Main Line Repair",
+      "keywords": ["emergency service", "main line backup", "quick response"],
+      "testimonialMatch": "main line backed up, Radius Works was here within an hour",
+      "category": "reviews",
+      "priority": "medium"
+    },
+    "review-professional-service": {
+      "src": "images/stock/reviews/review-professional-service.jpg",
+      "webp": "images/optimized/reviews/review-professional-service.webp",
+      "optimized": "images/optimized/reviews/review-professional-service.jpg",
+      "alt": "Professional plumbing service Milwaukee - quality workmanship example",
+      "title": "Professional Plumbing Service - Milwaukee Quality Workmanship",
+      "keywords": ["professional service", "quality workmanship", "customer satisfaction"],
+      "testimonialMatch": "general professional service",
+      "category": "reviews",
+      "priority": "medium"
+    }
+  },
+  "seo": {
+    "openGraph": {
+      "defaultImage": "images/stock/hero/hero-main-plumber.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "alt": "Radius Works - Professional Plumbing Services Milwaukee Wisconsin"
+    },
+    "structuredData": {
+      "businessImages": [
+        "images/stock/hero/hero-main-plumber.png",
+        "images/stock/about/about-team-group.jpg",
+        "images/stock/services/service-bathroom-plumbing.jpg"
+      ]
+    }
+  }
+}
