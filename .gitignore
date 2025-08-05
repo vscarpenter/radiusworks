@@ -1,0 +1,17 @@
+# Claude Code artifacts
+CLAUDE.md
+.claude/
+claude-*
+
+# Kiro artifacts
+.kiro/
+kiro-*
+
+# Other common development artifacts
+.DS_Store
+.vscode/
+.idea/
+*.log
+node_modules/
+dist/
+build/
