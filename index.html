@@ -12,7 +12,7 @@
     <meta property="og:description" content="Professional residential & commercial plumbing services in Milwaukee. 24/7 emergency service, transparent pricing, and expert solutions.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.radiusworks.net">
-    <meta property="og:image" content="https://www.radiusworks.net/images/stock/hero/hero-main-plumber.png">
+    <meta property="og:image" content="https://www.radiusworks.net/images/optimized/hero/hero-main-plumber.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Radius Works | Milwaukee's Premier Plumbing & Drain Cleaning Experts">
     <meta name="twitter:description" content="Professional residential & commercial plumbing services in Milwaukee. 24/7 emergency service.">
@@ -22,7 +22,11 @@
     <meta name="ICBM" content="43.0389, -87.9065">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/image-enhancements.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/visual-enhancements.css">
+    <link rel="stylesheet" href="css/typography-enhancements.css">
+    <link rel="stylesheet" href="css/interactive-enhancements.css">
+    <link rel="stylesheet" href="css/visual-personality.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="canonical" href="https://www.radiusworks.net/">
     <script type="application/ld+json">
@@ -56,7 +60,7 @@
       "image": [
         {
           "@type": "ImageObject",
-          "url": "https://www.radiusworks.net/images/stock/hero/hero-main-plumber.png",
+          "url": "https://www.radiusworks.net/images/optimized/hero/hero-main-plumber.png",
           "caption": "Professional Milwaukee plumber installing water heater - Radius Works expert plumbing services",
           "width": 1920,
           "height": 1080,
@@ -150,9 +154,17 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="pipe-decoration"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
+        <div class="water-drop"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1>Milwaukee's Trusted Plumbing & Drain Cleaning Experts</h1>
+                <h1>
+                    <span class="animated-text">
+                        <span>Milwaukee's</span> <span>Trusted</span> <span>Plumbing</span> <span>&</span> <span>Drain</span> <span>Cleaning</span> <span>Experts</span>
+                    </span>
+                </h1>
                 <p>Professional residential and commercial plumbing services with transparent pricing, 24/7 emergency response, and guaranteed quality workmanship.</p>
                 <div class="hero-buttons">
                     <a href="tel:414-800-9188" class="btn btn-primary">
@@ -179,18 +191,18 @@
             </div>
             <div class="hero-image">
                 <div class="hero-image-container">
-                    <picture class="hero-picture">
-                        <source srcset="images/optimized/hero/hero-main-plumber.webp" type="image/webp">
-                        <source srcset="images/optimized/hero/hero-main-plumber.png" type="image/png">
-                        <img src="images/stock/hero/hero-main-plumber.png" 
-                             alt="Professional Milwaukee plumber installing water heater - Expert plumbing services by Radius Works" 
-                             class="hero-img-enhanced" 
-                             loading="eager"
-                             data-fallback-src="images/hero-bg.jpg"
-                             data-category="hero"
-                             data-image-name="hero-main-plumber"
-                             onerror="handleHeroImageError(this)">
-                    </picture>
+                    <img src="images/optimized/hero/hero-main-plumber.png" 
+                         alt="Professional Milwaukee plumber installing water heater - Expert plumbing services by Radius Works" 
+                         class="hero-img-enhanced" 
+                         loading="eager"
+                         onload="this.style.display='block'; this.parentElement.querySelector('.hero-placeholder').style.display='none';"
+                         onerror="console.log('Hero image failed to load, keeping placeholder');"
+                         style="display: none;">
+                    <!-- Immediate fallback content -->
+                    <div class="hero-placeholder" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%);">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🔧</div>
+                        <div style="color: white; font-size: 1.1rem; font-weight: 600; text-align: center;">Professional Plumbing Services</div>
+                    </div>
                     <div class="hero-image-overlay"></div>
                 </div>
             </div>
@@ -199,25 +211,20 @@
 
     <!-- Services Section -->
     <section id="services" class="services">
+        <div class="decorative-dots"></div>
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <h2>Complete Plumbing Solutions</h2>
                 <p>From routine maintenance to emergency repairs, we handle all your plumbing needs with expertise and care.</p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card service-card-enhanced" data-service="residential">
+                <div class="service-card service-card-enhanced scroll-reveal" data-service="residential">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-bathroom-plumbing.webp" type="image/webp">
-                            <img src="images/stock/services/service-bathroom-plumbing.jpg" 
+                        <img src="images/optimized/services/service-bathroom-plumbing.jpg" 
                                  alt="Professional bathroom plumbing installation Milwaukee - toilet and faucet repair services"
                                  loading="lazy"
-                                 data-fallback-src="images/residential-service.jpg"
-                                 data-category="services"
-                                 data-image-name="service-bathroom-plumbing"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(37, 99, 235, 0.9) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -235,18 +242,12 @@
                     </div>
                 </div>
 
-                <div class="service-card service-card-enhanced" data-service="commercial">
+                <div class="service-card service-card-enhanced scroll-reveal" data-service="commercial">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-commercial-kitchen.webp" type="image/webp">
-                            <img src="images/stock/services/service-commercial-kitchen.jpg" 
+                        <img src="images/optimized/services/service-commercial-kitchen.jpg" 
                                  alt="Commercial kitchen plumbing Milwaukee - restaurant plumbing services Radius Works"
                                  loading="lazy"
-                                 data-fallback-src="images/commercial-service.jpg"
-                                 data-category="services"
-                                 data-image-name="service-commercial-kitchen"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(16, 185, 129, 0.8) 0%, rgba(5, 150, 105, 0.9) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -264,18 +265,12 @@
                     </div>
                 </div>
 
-                <div class="service-card service-card-enhanced" data-service="water-heater">
+                <div class="service-card service-card-enhanced scroll-reveal" data-service="water-heater">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-water-heater-install.webp" type="image/webp">
-                            <img src="images/stock/services/service-water-heater-install.jpg" 
+                        <img src="images/optimized/services/service-water-heater-install.jpg" 
                                  alt="Water heater installation Milwaukee - tankless and traditional water heater services"
                                  loading="lazy"
-                                 data-fallback-src="images/water-heater-icon.png"
-                                 data-category="services"
-                                 data-image-name="service-water-heater-install"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(245, 158, 11, 0.8) 0%, rgba(217, 119, 6, 0.9) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -293,18 +288,12 @@
                     </div>
                 </div>
 
-                <div class="service-card service-card-enhanced" data-service="drain-cleaning">
+                <div class="service-card service-card-enhanced scroll-reveal" data-service="drain-cleaning">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-drain-cleaning.webp" type="image/webp">
-                            <img src="images/stock/services/service-drain-cleaning.jpg" 
+                        <img src="images/optimized/services/service-drain-cleaning.jpg" 
                                  alt="Professional drain cleaning Milwaukee - hydro jetting and camera inspection services"
                                  loading="lazy"
-                                 data-fallback-src="images/hero-bg.jpg"
-                                 data-category="services"
-                                 data-image-name="service-drain-cleaning"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(124, 58, 237, 0.9) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -322,18 +311,12 @@
                     </div>
                 </div>
 
-                <div class="service-card service-card-enhanced" data-service="water-filtration">
+                <div class="service-card service-card-enhanced scroll-reveal" data-service="water-filtration">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-water-filtration.webp" type="image/webp">
-                            <img src="images/stock/services/service-water-filtration.jpg" 
+                        <img src="images/optimized/services/service-water-filtration.jpg" 
                                  alt="Water filtration system installation Milwaukee - whole house and under-sink filters"
                                  loading="lazy"
-                                 data-fallback-src="images/water-filter-icon.png"
-                                 data-category="services"
-                                 data-image-name="service-water-filtration"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(6, 182, 212, 0.8) 0%, rgba(8, 145, 178, 0.9) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -351,18 +334,12 @@
                     </div>
                 </div>
 
-                <div class="service-card service-card-enhanced emergency" data-service="emergency">
+                <div class="service-card service-card-enhanced emergency scroll-reveal" data-service="emergency">
                     <div class="service-background">
-                        <picture>
-                            <source srcset="images/optimized/services/service-emergency-repair.webp" type="image/webp">
-                            <img src="images/stock/services/service-emergency-repair.jpg" 
+                        <img src="images/optimized/services/service-emergency-repair.jpg" 
                                  alt="24/7 emergency plumbing Milwaukee - burst pipe repair and emergency services"
                                  loading="lazy"
-                                 data-fallback-src="images/hero-bg.jpg"
-                                 data-category="services"
-                                 data-image-name="service-emergency-repair"
-                                 onerror="handleServiceImageError(this)">
-                        </picture>
+                                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, rgba(220, 38, 38, 0.9) 0%, rgba(185, 28, 28, 0.95) 100%)'">
                         <div class="service-overlay"></div>
                     </div>
                     <div class="service-content">
@@ -385,6 +362,7 @@
 
     <!-- About Section -->
     <section id="about" class="about">
+        <div class="decorative-dots"></div>
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
@@ -417,9 +395,7 @@
                 <div class="about-image">
                     <div class="about-team-gallery">
                         <div class="team-primary">
-                            <picture>
-                                <source srcset="images/optimized/about/about-team-group.webp" type="image/webp">
-                                <img src="images/stock/about/about-team-group.jpg"
+                            <img src="images/optimized/about/about-team-group.jpg"
                                      alt="Radius Works professional plumbing team Milwaukee Wisconsin - experienced licensed plumbers"
                                      loading="lazy"
                                      class="team-primary-img"
@@ -437,9 +413,7 @@
                         </div>
                         <div class="team-secondary">
                             <div class="team-member">
-                                <picture>
-                                    <source srcset="images/optimized/about/about-plumber-portrait.webp" type="image/webp">
-                                    <img src="images/stock/about/about-plumber-portrait.jpg"
+                                <img src="images/optimized/about/about-plumber-portrait.jpg"
                                          alt="Licensed plumber Milwaukee - professional service technician with years of experience"
                                          loading="lazy"
                                          class="team-member-img"
@@ -447,15 +421,12 @@
                                          data-category="about"
                                          data-image-name="about-plumber-portrait"
                                          onerror="handleAboutImageError(this)">
-                                </picture>
                                 <div class="member-overlay">
                                     <span>Lead Technician</span>
                                 </div>
                             </div>
                             <div class="team-member">
-                                <picture>
-                                    <source srcset="images/optimized/about/about-team-work.webp" type="image/webp">
-                                    <img src="images/stock/about/about-team-work.jpg"
+                                <img src="images/optimized/about/about-team-work.jpg"
                                          alt="Radius Works team installing plumbing system Milwaukee - professional installation services"
                                          loading="lazy"
                                          class="team-member-img"
@@ -463,7 +434,6 @@
                                          data-category="about"
                                          data-image-name="about-team-work"
                                          onerror="handleAboutImageError(this)">
-                                </picture>
                                 <div class="member-overlay">
                                     <span>Expert Installation</span>
                                 </div>
@@ -478,7 +448,7 @@
     <!-- Reviews Section -->
     <section id="reviews" class="reviews">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header scroll-reveal">
                 <h2>What Our Customers Say</h2>
                 <p>Don't just take our word for it - hear from satisfied customers throughout the Milwaukee area.</p>
             </div>
@@ -486,16 +456,13 @@
             <div class="reviews-grid">
                 <div class="review-card enhanced" data-review="water-heater">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-water-heater-work.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-water-heater-work.jpg" 
+                        <img src="images/optimized/reviews/review-water-heater-work.jpg" 
                                  alt="Water heater installation Milwaukee - professional emergency service example"
                                  loading="lazy"
                                  data-fallback-src="images/water-heater-icon.png"
                                  data-category="reviews"
                                  data-image-name="review-water-heater-work"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -516,16 +483,13 @@
 
                 <div class="review-card enhanced" data-review="commercial">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-commercial-work.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-commercial-work.jpg" 
+                        <img src="images/optimized/reviews/review-commercial-work.jpg" 
                                  alt="Commercial kitchen plumbing Milwaukee - restaurant and home service example"
                                  loading="lazy"
                                  data-fallback-src="images/commercial-service.jpg"
                                  data-category="reviews"
                                  data-image-name="review-commercial-work"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -546,16 +510,13 @@
 
                 <div class="review-card enhanced" data-review="drain-cleaning">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-drain-cleaning-work.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-drain-cleaning-work.jpg" 
+                        <img src="images/optimized/reviews/review-drain-cleaning-work.jpg" 
                                  alt="Drain cleaning Milwaukee - camera inspection and professional service example"
                                  loading="lazy"
                                  data-fallback-src="images/hero-bg.jpg"
                                  data-category="reviews"
                                  data-image-name="review-drain-cleaning-work"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -576,16 +537,13 @@
 
                 <div class="review-card enhanced" data-review="bathroom-remodel">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-bathroom-remodel.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-bathroom-remodel.jpg" 
+                        <img src="images/optimized/reviews/review-bathroom-remodel.jpg" 
                                  alt="Bathroom remodel plumbing Milwaukee - professional installation example"
                                  loading="lazy"
                                  data-fallback-src="images/residential-service.jpg"
                                  data-category="reviews"
                                  data-image-name="review-bathroom-remodel"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -606,16 +564,13 @@
 
                 <div class="review-card enhanced" data-review="emergency">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-emergency-service.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-emergency-service.jpg" 
+                        <img src="images/optimized/reviews/review-emergency-service.jpg" 
                                  alt="Emergency plumbing Milwaukee - main line backup repair example"
                                  loading="lazy"
                                  data-fallback-src="images/hero-bg.jpg"
                                  data-category="reviews"
                                  data-image-name="review-emergency-service"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -636,16 +591,13 @@
 
                 <div class="review-card enhanced" data-review="professional-service">
                     <div class="review-background">
-                        <picture>
-                            <source srcset="images/optimized/reviews/review-professional-service.webp" type="image/webp">
-                            <img src="images/stock/reviews/review-professional-service.jpg" 
+                        <img src="images/optimized/reviews/review-professional-service.jpg" 
                                  alt="Professional plumbing service Milwaukee - quality workmanship and customer satisfaction example"
                                  loading="lazy"
                                  data-fallback-src="images/water-filter-icon.png"
                                  data-category="reviews"
                                  data-image-name="review-professional-service"
                                  onerror="handleReviewImageError(this)">
-                        </picture>
                         <div class="review-overlay"></div>
                     </div>
                     <div class="review-content">
@@ -811,7 +763,18 @@
         </div>
     </footer>
 
+    <!-- Floating Action Buttons -->
+    <div class="floating-contact">
+        <a href="tel:414-800-9188" class="fab fab-phone tooltip" data-tooltip="Call Now">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://book.housecallpro.com/book/Radius-Works/03f8c8b91bfa4f9486fd94ca4c203e06?v2=true" target="_blank" class="fab fab-book tooltip" data-tooltip="Book Online">
+            <i class="fas fa-calendar-alt"></i>
+        </a>
+    </div>
+
     <script src="js/image-enhancements.js"></script>
+    <script src="js/enhanced-interactions.js"></script>
     <script>
         // Hero-specific image error handling
         function handleHeroImageError(img) {
@@ -831,11 +794,26 @@
                     const container = img.closest('.hero-image-container');
                     if (container) {
                         container.classList.add('hero-fallback-gradient');
+                        // Add some animation to make it more appealing
+                        container.style.animation = 'fadeIn 0.5s ease-in-out';
                     }
-                    console.log('🎨 Hero image final fallback: Using gradient background');
+                    console.log('🎨 Hero image final fallback: Using gradient background with icon');
                     break;
             }
         }
+        
+        // Trigger fallback immediately if image doesn't exist
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroImg = document.querySelector('.hero-img-enhanced');
+            if (heroImg) {
+                // Check if image loads within 3 seconds, otherwise trigger fallback
+                setTimeout(() => {
+                    if (!heroImg.complete || heroImg.naturalHeight === 0) {
+                        handleHeroImageError(heroImg);
+                    }
+                }, 3000);
+            }
+        });
     </script>
     <script src="script.js"></script>
 </body>

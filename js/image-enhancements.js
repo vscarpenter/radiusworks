@@ -254,10 +254,8 @@ class ImageEnhancementManager {
      * Check if browser supports WebP
      */
     checkWebPSupport() {
-        const canvas = document.createElement('canvas');
-        canvas.width = 1;
-        canvas.height = 1;
-        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+        // Disabled WebP for better compatibility
+        return false;
     }
 
     /**
@@ -266,8 +264,7 @@ class ImageEnhancementManager {
     setupImagePreloading() {
         // Preload hero images and other critical images
         const criticalImages = [
-            'images/stock/hero/hero-main-plumber.png',
-            'images/optimized/hero/hero-main-plumber.webp'
+            'images/optimized/hero/hero-main-plumber.png'
         ];
 
         criticalImages.forEach(src => {

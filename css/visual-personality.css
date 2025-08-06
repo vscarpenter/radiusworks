@@ -1,0 +1,455 @@
+/* 
+ * Visual Personality Enhancements for Radius Works Website
+ * Adds custom graphics, enhanced icons, and brand personality
+ */
+
+/* ===== ENHANCED ICON SYSTEM ===== */
+
+/* Custom icon styling with personality */
+.fas, .far, .fab {
+    font-weight: 900;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Phone icon enhancements */
+.fa-phone {
+    position: relative;
+}
+
+.fa-phone::before {
+    background: linear-gradient(45deg, #10b981, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.4));
+}
+
+/* Calendar icon enhancements */
+.fa-calendar-alt::before {
+    background: linear-gradient(45deg, #3b82f6, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.4));
+}
+
+/* Service icons with personality */
+.service-icon .fa-home::before { 
+    background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-icon .fa-building::before { 
+    background: linear-gradient(45deg, #06b6d4, #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-icon .fa-tint::before { 
+    background: linear-gradient(45deg, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-icon .fa-shower::before { 
+    background: linear-gradient(45deg, #10b981, #059669);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-icon .fa-filter::before { 
+    background: linear-gradient(45deg, #06b6d4, #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.service-icon .fa-exclamation-triangle::before { 
+    color: #ffffff;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+}
+
+/* ===== CUSTOM DECORATIVE ELEMENTS ===== */
+
+/* Add decorative elements to section headers */
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Decorative dots pattern */
+.decorative-dots {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.2) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+}
+
+.services .decorative-dots {
+    top: 20%;
+    right: 10%;
+    transform: rotate(15deg);
+}
+
+.about .decorative-dots {
+    bottom: 20%;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+/* ===== ENHANCED FEATURE ICONS ===== */
+
+.feature i {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.feature:hover i {
+    transform: scale(1.2) rotate(10deg);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Clock icon animation */
+@keyframes tick {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(6deg); }
+}
+
+.fa-clock {
+    animation: tick 2s ease-in-out infinite;
+}
+
+/* Shield protection animation */
+@keyframes protect {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.fa-shield-alt {
+    animation: protect 3s ease-in-out infinite;
+}
+
+/* Dollar sign pulse */
+@keyframes dollar-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.fa-dollar-sign {
+    animation: dollar-pulse 2.5s ease-in-out infinite;
+}
+
+/* ===== VALUE ICONS ENHANCEMENTS ===== */
+
+.value i {
+    position: relative;
+    overflow: hidden;
+}
+
+.value i::before {
+    position: relative;
+    z-index: 2;
+}
+
+.value i::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.value:hover i::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== CONTACT ICONS STYLING ===== */
+
+.contact-item i {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Specific contact icon animations */
+.contact-item:nth-child(1) i { /* Phone */
+    animation: phone-ring 4s ease-in-out infinite;
+}
+
+@keyframes phone-ring {
+    0%, 90%, 100% { transform: rotate(0deg); }
+    5%, 15% { transform: rotate(15deg); }
+    10%, 20% { transform: rotate(-15deg); }
+}
+
+.contact-item:nth-child(2) i { /* Email */
+    animation: email-bounce 3s ease-in-out infinite;
+}
+
+@keyframes email-bounce {
+    0%, 90%, 100% { transform: translateY(0); }
+    45% { transform: translateY(-8px); }
+}
+
+.contact-item:nth-child(3) i { /* Location */
+    animation: location-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes location-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.contact-item:nth-child(4) i { /* Clock */
+    animation: clock-rotation 10s linear infinite;
+}
+
+@keyframes clock-rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== CUSTOM GRAPHICS ELEMENTS ===== */
+
+/* Plumbing pipe decorative element */
+.pipe-decoration {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(90deg, 
+        rgba(37, 99, 235, 0.1) 0%, 
+        rgba(37, 99, 235, 0.2) 50%, 
+        rgba(37, 99, 235, 0.1) 100%);
+    border-radius: 10px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.hero .pipe-decoration {
+    top: 10%;
+    right: 20%;
+    animation: pipe-flow 8s ease-in-out infinite alternate;
+}
+
+@keyframes pipe-flow {
+    0% { opacity: 0.3; transform: rotate(45deg) translateX(0); }
+    100% { opacity: 0.7; transform: rotate(45deg) translateX(20px); }
+}
+
+/* Water drop decorative elements */
+.water-drop {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    background: rgba(59, 130, 246, 0.6);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: drop-fall 3s ease-in-out infinite;
+}
+
+.water-drop:nth-child(1) {
+    top: 15%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.water-drop:nth-child(2) {
+    top: 25%;
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.water-drop:nth-child(3) {
+    top: 35%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+@keyframes drop-fall {
+    0% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+    50% { opacity: 1; transform: translateY(10px) scale(1); }
+    100% { opacity: 0; transform: translateY(40px) scale(0.8); }
+}
+
+/* ===== BACKGROUND PATTERN ENHANCEMENTS ===== */
+
+/* Subtle grid pattern for sections */
+.pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.05) 0%, transparent 50%);
+    background-size: 400px 400px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Add patterns to specific sections */
+.services {
+    position: relative;
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* ===== LOGO ENHANCEMENTS ===== */
+
+.nav-logo {
+    filter: drop-shadow(2px 2px 4px rgba(41, 53, 78, 0.2));
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(3px 3px 6px rgba(41, 53, 78, 0.3));
+}
+
+/* ===== AREA BADGES ENHANCEMENT ===== */
+
+.area {
+    position: relative;
+    overflow: hidden;
+}
+
+.area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.area:hover::before {
+    left: 100%;
+}
+
+/* Add small icons to area badges */
+.area::after {
+    content: '📍';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.area:hover::after {
+    opacity: 1;
+}
+
+/* ===== RESPONSIVE PERSONALITY ADJUSTMENTS ===== */
+
+@media (max-width: 768px) {
+    .decorative-dots {
+        display: none;
+    }
+    
+    .pipe-decoration {
+        width: 100px;
+        height: 10px;
+    }
+    
+    .water-drop {
+        width: 8px;
+        height: 12px;
+    }
+    
+    .feature i {
+        width: 30px;
+        height: 30px;
+        margin-right: 0.5rem;
+    }
+    
+    .contact-item i {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pattern-overlay {
+        background-size: 200px 200px;
+    }
+    
+    .services::after {
+        display: none;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+
+@media print {
+    .decorative-dots,
+    .pipe-decoration,
+    .water-drop,
+    .pattern-overlay {
+        display: none;
+    }
+    
+    .nav-logo,
+    .contact-item i,
+    .value i,
+    .feature i {
+        filter: none;
+        box-shadow: none;
+    }
+}
